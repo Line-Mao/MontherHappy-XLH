@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>母亲节快乐</title>
+    <style>
+        /* 移动端适配 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffe6f2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 跳动爱心动画 */
+        .heart-container {
+            margin-top: 20vh;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .heart {
+            color: #ff69b4;
+            font-size: 4rem;
+            text-shadow: 0 0 20px rgba(255,105,180,0.5);
+        }
+
+        /* 文字祝福区域 */
+        .blessing {
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h1 {
+            color: #e60073;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        /* 动画定义 */
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.2);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.1);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* 手机竖屏适配 */
+        @media (max-width: 480px) {
+            .heart {
+                font-size: 3rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-container">
+        <div class="heart">❤️</div>
+    </div>
+
+    <div class="blessing">
+        <h1>母亲节快乐！</h1>
+        <p>亲爱的妈妈：</p>
+        <p>感谢您用爱编织我的整个世界</p>
+        <p>时光慢行，岁月静好</p>
+        <p>愿您永远健康幸福</p>
+        <p>愿您以后能过随心所愿</p>
+        <p style="margin-top: 20px;">—— 永远爱您的儿子</p>
+    </div>
+
+    <script>
+        // 添加点击爱心互动
+        document.querySelector('.heart').addEventListener('click', function() {
+            this.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+
+        // 自动适配深色模式
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.style.background = '#1a1a1a';
+            document.querySelector('.blessing').style.color = '#fff';
+        }
+    </script>
+</body>
+</html>
